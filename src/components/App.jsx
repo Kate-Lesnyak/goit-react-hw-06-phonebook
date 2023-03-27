@@ -65,7 +65,7 @@ export const App = () => {
   //   );
   // };
 
-  const changeFilter = e => setFilter(e.target.value);
+  // const changeFilter = e => setFilter(e.target.value);
 
   // const getVisibleContacts = () => {
   //   const normalizedFilter = filter.toLowerCase();

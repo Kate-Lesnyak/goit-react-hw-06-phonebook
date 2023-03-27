@@ -1,22 +1,38 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { DebounceInput } from 'react-debounce-input';
 
+import { useDispatch } from 'react-redux';
+import { setFilterValue } from 'redux/actions';
 import { StyledFilter, StyledInput } from './Filter.styled';
 
-export const Filter = ({ value, onChange }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
+  const changeFilter = e => dispatch(setFilterValue(e.target.value));
+
+  // todo проверить Debounce
   return (
     <StyledFilter>
       Finde contacts by name
-      <StyledInput
+      <DebounceInput
+        element={StyledInput}
         type="text"
         name="filter"
-        value={value}
-        onChange={onChange}
+        minLength={2}
+        debounceTimeout={300}
+        onChange={changeFilter}
       />
     </StyledFilter>
   );
 };
 
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+{/* <StyledInput
+  type="text"
+  name="filter"
+  // value={value}
+  onChange={changeFilter}
+/>; */}
+
+// Filter.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
