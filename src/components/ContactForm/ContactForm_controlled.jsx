@@ -1,5 +1,3 @@
-// import { useState, useEffect } from 'react';
-
 // import { useState } from 'react';
 
 // import {
@@ -10,7 +8,7 @@
 //   StyledButton,
 // } from './ContactForm.styled';
 
-// export const ContactForm = ({onSubmit}) => {
+// export const ContactForm = ({ onSubmit }) => {
 //   const [name, setName] = useState('');
 //   const [number, setNumber] = useState('');
 
@@ -30,16 +28,16 @@
 //     }
 //   };
 
-// const handleSubmit = e => {
-//  e.preventDefault();
-//  onSubmit(name, number);
-//  reset();
-// };
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     onSubmit(name, number);
+//     reset();
+//   };
 
-// const reset = () => {
-//   setName('');
-//   setNumber('');
-// }
+//   const reset = () => {
+//     setName('');
+//     setNumber('');
+//   };
 
 //   return (
 //     <StyledForm onSubmit={handleSubmit}>
