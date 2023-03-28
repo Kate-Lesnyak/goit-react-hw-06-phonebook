@@ -1,4 +1,9 @@
 import { Formik } from 'formik';
+import { Notify } from 'notiflix';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/actions';
+import { getContacts } from 'redux/selectors';
 // import * as Yup from 'yup';
 // import 'yup-phone';
 
@@ -19,7 +24,8 @@ import {
 //       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
 //       "Invalid name. Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan."
 //     )
-//     .required('Name is a required field'),
+//     .required('Name is a required field')
+//     .trim(),
 
 //   number: Yup.string()
 //     // .min(5, 'Too Short!')
@@ -27,18 +33,33 @@ import {
 //       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
 //       'Invalid number. Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
 //     )
-//     .required('Number is a required field'),
+//     .required('Number is a required field')
+//     .trim(),
 
 //   // number: Yup.string().phone().required(),
 // });
 
-export const ContactForm = ({ onSubmit }) => {
+export const ContactForm = () => {
+  // const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  // const normalizedName = contacts.name.toLowerCase();
+  // if (contacts.find(({ name }) => name.toLowerCase() === normalizedName)) {
+  //   return Notify.info(`${contacts.name} is already in contacts!`);
+  // }
+
+  // const handleSubmit = (values, { resetForm }) => {
+  //   dispatch(addContact(values));
+  //   resetForm();
+  // };
+
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
       // validationSchema={formSchema}
+      // onSubmit={handleSubmit}
       onSubmit={(values, { resetForm }) => {
-        onSubmit({ ...values });
+        dispatch(addContact({ ...values }));
         resetForm();
       }}
     >

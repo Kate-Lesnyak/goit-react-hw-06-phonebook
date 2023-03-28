@@ -59,11 +59,11 @@ img {
 }
 
 h1 {
-font-size: 32px;
+font-size: ${({ theme }) => theme.fontSizes.xxl};
 }
 
 h2 {
-font-size: 24px;
+font-size: ${({ theme }) => theme.fontSizes.large};
 }
 
 h1, h2 {
@@ -71,8 +71,8 @@ h1, h2 {
   color: ${({ theme }) => theme.colors.secondaryTextColor};
   background-color: ${({ theme }) => theme.colors.backgroundAndBorderColor};
   text-align: center;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: ${({ theme }) => theme.spacing(5)};
+  padding: ${({ theme }) => theme.spacing(2)};
   text-transform: uppercase;
 }
 
@@ -80,7 +80,7 @@ button {
   color: ${({ theme }) => theme.colors.buttonTextColor};
   background-color: transparent;
   border: ${({ theme }) => `1px solid ${theme.colors.accentColor}`};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.spacing(2)};
   transition-property: color, background-color, box-shadow;
   transition: ${({ theme }) => `background-color ${theme.transition}, color ${theme.transition}, box-shadow ${theme.transition}`};
 

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { MdOutlineDeleteOutline } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/actions';
 
 import {
   StyledContactListItem,
@@ -7,15 +9,14 @@ import {
   StyledButton,
 } from './ContactListItem.styled';
 
-export const ContactListItem = ({
-  contact: { id, name, number },
-  onDeleteContact,
-}) => {
+export const ContactListItem = ({ contact: { id, name, number } }) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledContactListItem>
       <StyledName>{name}:</StyledName>
       <p> {number} </p>
-      <StyledButton type="button" onClick={() => onDeleteContact(id)}>
+      <StyledButton type="button" onClick={() => dispatch(deleteContact(id))}>
         <MdOutlineDeleteOutline />
       </StyledButton>
     </StyledContactListItem>
@@ -28,5 +29,4 @@ ContactListItem.propTypes = {
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }).isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
 };

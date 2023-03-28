@@ -5,20 +5,20 @@ import { Form, Field, ErrorMessage } from 'formik';
 export const StyledForm = styled(Form)`
 width: 400px;
 display: flex;
-gap: 12px;
+gap: ${({ theme }) => theme.spacing(3)};
 flex-direction: column;
-padding: 12px;
+padding: ${({ theme }) => theme.spacing(3)};
 border: ${({ theme }) => `1px solid ${theme.colors.backgroundAndBorderColor}`};
-border-radius: 10px;
+border-radius: ${({ theme }) => theme.spacing(2)};
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 20px;
+margin-bottom: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const StyledFormField = styled.label`
 display: flex;
 flex-direction: column;
-gap: 4px;
+gap: ${({ theme }) => theme.spacing(1)};
 `;
 
 export const StyledLabel = styled.span`
@@ -30,14 +30,14 @@ max-width: 152px;
 margin: auto;
 padding: 8px 32px;
 font-weight: 500;
-margin-top: 4px;
+margin-top: ${({ theme }) => theme.spacing(1)};
 `;
 
 // styled.input
 export const StyledInput = styled(Field)`
 padding: 8px 16px;
 border: ${({ theme }) => `1px solid ${theme.colors.borderInputColor}`};
-border-radius: 10px;
+border-radius: ${({ theme }) => theme.spacing(2)};
 transition-property: border;
 transition: ${({ theme }) => `border ${theme.transition}`};
 

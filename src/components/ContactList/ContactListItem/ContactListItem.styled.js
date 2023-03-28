@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const StyledContactListItem = styled.li`
 display: flex;
 justify-content: space-between;
-gap: 12px;
+gap: ${({ theme }) => theme.spacing(3)};
 border: ${({ theme }) => `1px solid ${theme.colors.borderInputColor}`};
-border-radius: 10px;
+border-radius: ${({ theme }) => theme.spacing(2)};
 padding: 8px 16px;
 `;
 

@@ -3,18 +3,18 @@ import styled from 'styled-components';
 export const StyledContacts = styled.ul`
 width: 400px;
 display: flex;
-gap: 12px;
+gap: ${({ theme }) => theme.spacing(3)};
 flex-direction: column;
-padding: 12px;
+padding: ${({ theme }) => theme.spacing(3)};
 border: ${({ theme }) => `1px solid ${theme.colors.backgroundAndBorderColor}`};
-border-radius: 10px;
+border-radius: ${({ theme }) => theme.spacing(2)};
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 20px;
+margin-bottom: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const StyledFormField = styled.label`
 display: flex;
 flex-direction: column;
-gap: 4px;
+gap: ${({ theme }) => theme.spacing(1)};
 `;

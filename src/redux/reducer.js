@@ -13,7 +13,6 @@ const contactsReducer = (state = contactsInitialState, action) => {
     default:
       return state;
   }
-
 };
 
 const filterInitialState = '';
@@ -26,9 +25,7 @@ const filterReducer = (state = filterInitialState, action) => {
     default:
       return state;
   }
-
 };
-
 
 export const rootReducer = combineReducers({
   contacts: contactsReducer,
