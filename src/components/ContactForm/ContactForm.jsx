@@ -1,9 +1,11 @@
 import { Formik } from 'formik';
-import { Notify } from 'notiflix';
+// import { Notify } from 'notiflix';
 
-import { useDispatch, useSelector } from 'react-redux';
+// import {  useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/actions';
-import { getContacts } from 'redux/selectors';
+// import { getContacts } from 'redux/selectors';
+
 // import * as Yup from 'yup';
 // import 'yup-phone';
 
