@@ -31,3 +31,27 @@ export const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
 });
+
+// * createReducer
+// import { createReducer } from "@reduxjs/toolkit";
+// import { addContact, deleteContact, setFilterValue } from "./actions";
+
+// const contactsInitialState = [];
+
+// export const contactsReducer = createReducer(contactsInitialState, {
+//   [addContact]: (state, action) => {
+//     state.push(action.payload);
+//   },
+//   [deleteContact]: (state, action) => {
+//     return state.filter(({ id }) => id !== action.payload);
+//   },
+// })
+
+// const filterInitialState = '';
+
+// export const filterReducer = createReducer(filterInitialState, {
+//   [setFilterValue]: (state, action) => {
+//     return action.payload
+//   },
+// })
+
